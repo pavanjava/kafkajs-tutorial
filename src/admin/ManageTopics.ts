@@ -1,5 +1,5 @@
 import {Admin, ITopicConfig} from 'kafkajs';
-import {KafkaUtil} from '../util/KafkaUtil';
+import {kafka} from '../util/KafkaUtil';
 
 interface TopicConfig extends ITopicConfig {
     topic: string;
@@ -9,7 +9,7 @@ interface TopicConfig extends ITopicConfig {
 
 export class ManageTopics {
     createTopic = async (topicConfig: TopicConfig[]): Promise<boolean> => {
-        const kafkaAdmin: Admin = KafkaUtil.getKafkaInstance().admin();
+        const kafkaAdmin: Admin = kafka.admin();
         try {
             await kafkaAdmin.connect();
             return await kafkaAdmin.createTopics({
@@ -23,7 +23,7 @@ export class ManageTopics {
     };
 
     deleteTopic = async (topics: string[]): Promise<void> => {
-        const kafkaAdmin: Admin = KafkaUtil.getKafkaInstance().admin();
+        const kafkaAdmin: Admin = kafka.admin();
         try {
             await kafkaAdmin.connect();
             await kafkaAdmin.deleteTopics({

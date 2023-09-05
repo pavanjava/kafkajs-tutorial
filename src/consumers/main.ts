@@ -1,5 +1,3 @@
-import {TopicConsumers} from './TopicConsumers';
+import {init} from './DataConsumer';
 
-const consumer: TopicConsumers = new TopicConsumers();
-
-consumer.consume(['topic_61']).then(() => {});
+init().then(() => {});

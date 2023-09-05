@@ -1,1 +1,3 @@
-console.log('Need to code yet');
+import {init} from './DataProducer';
+
+init().then(() => {});
