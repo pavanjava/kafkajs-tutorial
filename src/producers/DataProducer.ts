@@ -2,7 +2,7 @@ import {kafka} from '../util/KafkaUtil';
 import readline from 'readline';
 import {Producer} from 'kafkajs';
 
-const dataInterface = readline.createInterface({
+const dataInterface: readline.Interface = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
 });
