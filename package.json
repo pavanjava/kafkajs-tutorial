@@ -1,0 +1,27 @@
+{
+  "name": "kafkajs-tutorial",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/pavanjava/kafkajs-tutorial.git",
+  "author": "<manthapavankumar11@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint --ext .ts src",
+    "lint:fix": "eslint --fix src --ext=.ts",
+    "start:admin": "yarn lint:fix && ts-node src/admin/main.ts",
+    "start:consumer": "yarn lint:fix && ts-node src/consumers/main.ts",
+    "start:producer": "yarn lint:fix && ts-node src/producers/main.ts"
+  },
+  "dependencies": {
+    "kafkajs": "^2.2.4",
+    "typescript": "^5.2.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.5.9",
+    "@typescript-eslint/eslint-plugin": "^6.6.0",
+    "@typescript-eslint/parser": "^6.6.0",
+    "eslint": "^8.48.0",
+    "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0"
+  }
+}
