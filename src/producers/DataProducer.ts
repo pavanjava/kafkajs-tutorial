@@ -10,12 +10,12 @@ const dataInterface: readline.Interface = readline.createInterface({
 export const init = async (): Promise<void> => {
     const producer: Producer = kafka.producer();
 
-    console.log('Connecting Producer');
     await producer.connect();
-    console.log('Producer Connected Successfully');
 
     dataInterface.setPrompt('$ ');
     dataInterface.prompt();
+
+    console.log(`type your input and push: `);
 
     dataInterface.on('line', async function (line) {
         const data = JSON.parse(line);
