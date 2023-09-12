@@ -15,12 +15,12 @@ export const init = async (): Promise<void> => {
     dataInterface.setPrompt('$ ');
     dataInterface.prompt();
 
-    console.log(`type your input and push: `);
+    console.log('type your input and push: ');
 
     dataInterface.on('line', async function (line) {
         const data = JSON.parse(line);
         await producer.send({
-            topic: 'topic_61',
+            topic: 'topic_p',
             messages: [
                 {
                     partition: data.location.toLowerCase() === 'north' ? 0 : 1,
